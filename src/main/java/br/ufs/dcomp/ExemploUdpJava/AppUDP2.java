@@ -11,11 +11,11 @@ public class AppUDP2 {
     	    DatagramSocket socket = new DatagramSocket(20000);
             System.out.println("[OK] ]");
 
-            byte[] buf = new byte[20];
-            DatagramPacket pack = new DatagramPacket(buf, buf.length);
+            byte[] buf = new byte[20]; // Cria um vetor em bytes, capacidade 20 bytes
+            DatagramPacket pack = new DatagramPacket(buf, buf.length); // Cria um pacote vazio
 
             System.out.print("[ Aguardando recebimento de mensagem  ..................  ");
-            socket.receive(pack);
+            socket.receive(pack); // Recebe no pacote vazio (É bloqueante)
             System.out.println("[OK] ]");
             
             byte[] received_data = pack.getData();
